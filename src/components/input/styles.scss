@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.input {
+  display: flex;
+  border: 2px solid $border-color;
+  border-radius: 4px;
+  overflow: hidden;
+
+  background: $white;
+  color: $black;
+
+  input {
+    border: none;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    padding: 10px 16px;
+    border-radius: 25px;
+    flex: 1 1 auto;
+    background: $white;
+    color: $black;
+
+    &::placeholder {
+      color: rgba($black, 0.8);
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $black;
+      box-shadow: 0 0 0px 1000px $white inset;
+    }
+  }
+
+  .password-btn {
+    border-radius: 0;
+  }
+}
