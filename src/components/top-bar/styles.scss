@@ -4,19 +4,92 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid $border-color;
   background: $white;
-  padding: 16px 24px;
   margin: 0 0 48px;
   box-shadow: 0 0 5px 0 rgba($black, 0.2);
 
-  .logo {
-    font-size: 24px;
-    color: rgba($black, 0.8);
-    font-weight: 900;
-    font-family: monospace;
+  .top-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px;
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      pointer-events: none;
+
+      &.clickable {
+        pointer-events: initial;
+        cursor: pointer;
+      }
+    }
+
+    .left-side {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .search-fields {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0 24px;
+        box-shadow: 0 0 1px 2px rgba($black, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+
+        .input {
+          border-width: 0;
+          border-radius: 0;
+          width: 180px;
+          &:not(:last-child) {
+            border-right-width: 1px;
+          }
+        }
+      }
+    }
+
+    .right-side {
+      .menu-list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .menu-item {
+          font-size: 14px;
+          color: $black;
+          font-weight: 500;
+          text-decoration: none;
+          padding: 8px 16px;
+          cursor: pointer;
+
+          &:hover,
+          &:focus,
+          &.active {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  .extra-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .link-item {
+      font-size: 12px;
+      color: $black;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 16px;
+
+      &.active {
+        color: $main;
+      }
+    }
   }
 }
