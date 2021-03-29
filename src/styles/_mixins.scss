@@ -1,0 +1,9 @@
+@use "sass:map";
+
+@function screen-min-width($key) {
+  @return map-get($grid-breakpoints, $key);
+}
+
+@function col-width($key) {
+  @return 100% / $grid-columns * $key;
+}

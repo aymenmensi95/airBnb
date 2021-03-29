@@ -10,9 +10,25 @@ $page-bg: #fff;
 $btn-min-width: 80px;
 $btn-radius: 25px;
 
-$grid-padding: 15px;
+$grid-padding: 8px;
 
-$bp-xs: 480px;
-$bp-sm: 767px;
-$bp-md: 991px;
-$bp-lg: 1199px;
+$grid-columns: 10;
+$grid-gutter-width: $grid-padding * 2;
+
+$grid-breakpoints: (
+  // Small screen / phone
+    sm: 576px,
+  // Medium screen / tablet
+    md: 768px,
+  // Large screen / desktop
+    lg: 992px,
+  // Extra large screen / wide desktop
+    xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+);
