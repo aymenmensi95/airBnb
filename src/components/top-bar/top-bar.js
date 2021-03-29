@@ -1,4 +1,4 @@
-import { useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Link, navigate } from '@reach/router'
 
 import Input from "../input/input"
@@ -14,14 +14,32 @@ import './styles.scss'
 
 
 const TopBar = ({ menuList, pathname, extraLinks, onClickExtraLink, activeExtraLink }) => {
+  const [follower, setFollower] = useState({})
+
+  useEffect(() => {
+    const elem = document.querySelector('.link-item.active')
+    if(elem) {
+      setFollower({left: elem.offsetLeft, width: elem.offsetWidth})
+    }
+  }, [extraLinks])
 
   const renderMenuList = useMemo(() => (menuList || []).map((item, index) => (
     <Link key={index} to={item?.link || ''} className={`menu-item ${(item?.active || [])?.includes(pathname) ? 'active' : ''}`}>{item?.label}</Link>
   )), [menuList, pathname])
 
   const renderExtraLinks = useMemo(() => (extraLinks || []).map((item, index) => (
-    <div key={index} onClick={() => onClickExtraLink && onClickExtraLink(item?.key)} className={`link-item ${activeExtraLink === item?.key ? 'active' : ''}`}>{item?.label}</div>
+    <div 
+      key={index}
+      className={`link-item ${activeExtraLink === item?.key ? 'active' : ''}`}
+      onClick={e => {
+        setFollower({left: e.target.offsetLeft, width: e.target.offsetWidth})
+        onClickExtraLink && onClickExtraLink(item?.key)
+      }}
+    >
+      {item?.label}
+    </div>
   )), [extraLinks, activeExtraLink, onClickExtraLink])
+
 
   return (
     <div className="top-bar">
@@ -43,6 +61,7 @@ const TopBar = ({ menuList, pathname, extraLinks, onClickExtraLink, activeExtraL
       {extraLinks && extraLinks.length > 0 && (
         <div className="extra-links">
           {renderExtraLinks}
+          <span className="follower" style={follower} />
         </div>
       )}
     </div>
@@ -56,5 +75,5 @@ TopBar.defaultProps = {
   pathname: '/',
   extraLinks: EXTRA_MENU_LIST,
   onClickExtraLink: key => {},
-  activeExtraLink: 'for_you',
+  activeExtraLink: '',
 }

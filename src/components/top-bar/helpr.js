@@ -26,16 +26,4 @@ export const EXTRA_MENU_LIST = [
     label: 'FOR YOU',
     key: 'for_you',
   },
-  {
-    label: 'HOMES',
-    key: 'homes',
-  },
-  {
-    label: 'EXPERIENCES',
-    key: 'experiences',
-  },
-  {
-    label: 'PLACES',
-    key: 'places',
-  },
 ]

@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: $grid-padding;
+  max-width: $bp-lg + 1;
+
+  @media (max-width: $bp-lg) {
+    max-width: $bp-md + 1;
+  }
+
+  @media (max-width: $bp-md) {
+    max-width: $bp-sm + 1;
+  }
+}

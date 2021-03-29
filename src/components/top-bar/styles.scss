@@ -80,16 +80,26 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
     .link-item {
       font-size: 12px;
       color: $black;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
-      padding: 16px;
+      margin: 16px;
+      cursor: pointer;
 
       &.active {
         color: $main;
       }
+    }
+    .follower {
+      position: absolute;
+      top: calc(100%);
+      background-color: $main;
+      height: 2px;
+      border-radius: 5px;
+      transition: all 0.2s ease-in-out;
     }
   }
 }
