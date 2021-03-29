@@ -1,5 +1,4 @@
-@import './styles/variables';
-@import './styles/grid';
+@import './styles/imports';
 
 body {
   margin: 0;
@@ -15,6 +14,10 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+.section {
+  padding: 24px 0;
 }
 
 .section-title {

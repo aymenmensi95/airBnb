@@ -1,0 +1,12 @@
+@import '../../styles/imports';
+
+.stars-rate {
+  display: inline-flex;
+  align-items: center;
+  img {
+    height: 12px;
+    width: 12px;
+    object-fit: contain;
+    margin: 0 2px;
+  }
+}
