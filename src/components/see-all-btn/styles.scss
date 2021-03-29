@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.see-all-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 400;
+  color: $black;
+  text-decoration: none;
+  img {
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+    margin: 0 4px;
+  }
+}
