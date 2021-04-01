@@ -17,12 +17,6 @@
       object-fit: cover;
       transition: all 3s ease-in-out;
     }
-
-    &:hover {
-      img {
-        transform: scale(1.5);
-      }
-    }
   }
 
   .info {
@@ -42,10 +36,19 @@
       margin: 0 4px;
     }
   }
+
   .rate {
     .reviews {
       padding: 0 4px;
       font-size: 12px;
+    }
+  }
+
+  &:hover {
+    .image {
+      img {
+        transform: scale(1.5);
+      }
     }
   }
 }

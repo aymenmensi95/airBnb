@@ -103,6 +103,48 @@ export const DESTINATIONS = [
 
 
 
+export const PLACES = [
+  {
+    id: 1,
+    image: havana,
+    tag: 'Guide',
+    name: 'Handbag Shopping',
+    owner: 'Chanda Stacker',
+    text: 'Food Blogger',
+  },
+  {
+    id: 2,
+    image: cuban,
+    tag: 'Guide',
+    name: 'Where to see comedy',
+    owner: 'Edgar Agbayani',
+    text: 'Chef',
+  },
+  {
+    id: 3,
+    image: country,
+    tag: 'Guide',
+    name: 'Scarf shops',
+    owner: 'Carlos Muela',
+    text: 'SoMa StrEat Food Park',
+  },
+  {
+    id: 4,
+    image: kenyan,
+    tag: 'Guide',
+    name: 'Wine bars',
+    owner: 'Apexer',
+    text: 'Artist',
+  },
+  {
+    id: 5,
+    image: miami,
+    tag: 'Guide',
+    name: 'Vintage Decor',
+    owner: 'Andrew McClintock',
+    text: 'Gallerist',
+  },
+]
 
 
 
