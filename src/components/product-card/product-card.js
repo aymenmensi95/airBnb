@@ -8,7 +8,7 @@ const ProductCard = ({ image, price, text, stars, reviews }) => {
       <div className="image">
         <img src={image || 'http://via.placeholder.com/200x300/000'} alt="product-img" width="200" />
       </div>
-      <div className="info">
+      <div className="info" title={`${price} - ${text}`}>
         {price && <b className="price">{price}</b>} {text && <span className="text">{text}</span>}
       </div>
       <div className="rate">

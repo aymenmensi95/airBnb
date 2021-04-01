@@ -4,9 +4,10 @@ import TopBar from '../../components/top-bar'
 import SeeAllBtn from '../../components/see-all-btn'
 import ProductCard from '../../components/product-card'
 import DestinationCard from '../../components/destination-card'
+import PlacesCard from '../../components/places-card'
 import Footer from '../../components/footer/footer'
 
-import { SMALL_PAGES, BOOKED, DESTINATIONS } from './helper'
+import { SMALL_PAGES, BOOKED, DESTINATIONS, PLACES } from './helper'
 
 import './styles.scss'
 
@@ -37,6 +38,18 @@ const Home = ({ location }) => {
             ))}
           </div>
         </section>
+
+        <section className="section">
+          <h2 className="section-title">Places in London <SeeAllBtn /></h2>
+          <div className="row justify-center">
+            {PLACES.map((data, index) => (
+              <div key={index} className="col col-sm-5 col-md-3 col-xl-2">
+              <PlacesCard {...data} />
+              </div>
+            ))}
+          </div>
+        </section>
+        
       </div>    
       <Footer />
     </div>
